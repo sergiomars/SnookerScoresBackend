@@ -92,7 +92,8 @@ jobs:
       - name: Install Fly.io CLI
         run: |
           curl -L https://fly.io/install.sh | sh
-          export PATH=$HOME/.fly/bin:$PATH
+          echo "Adding Fly.io CLI to PATH"
+          echo "$HOME/.fly/bin" >> $GITHUB_PATH
           flyctl version
 
       - name: Authenticate with Fly.io
