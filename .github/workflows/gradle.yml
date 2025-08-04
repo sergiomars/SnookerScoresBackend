@@ -34,7 +34,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: application-jar
-          path: build/libs/*.jar # Pfad zum erstellten JAR
+          path: build/libs/SnookerScoresBackend-0.0.1-SNAPSHOT.jar # Pfad zum erstellten JAR
 
   test:
     runs-on: ubuntu-latest
