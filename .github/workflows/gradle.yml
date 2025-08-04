@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Erforderlich, um Release-Assets hochzuladen
+      contents: write
 
     steps:
       - uses: actions/checkout@v4
@@ -28,6 +28,8 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Build with Gradle
         run: ./gradlew build
+      - name: Debug List build/libs directory
+        run: ls -la build/libs/ # Hier wird der Inhalt des Ordners aufgelistet
       - name: Upload JAR to Artifacts
         uses: actions/upload-artifact@v4
         with:
