@@ -28,13 +28,11 @@ jobs:
             ${{ runner.os }}-gradle-
       - name: Build with Gradle
         run: ./gradlew build
-      - name: Debug List build/libs directory
-        run: ls -la build/libs/ # Hier wird der Inhalt des Ordners aufgelistet
       - name: Upload JAR to Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: application-jar
-          path: build/libs/SnookerScoresBackend-0.0.1-SNAPSHOT.jar # Pfad zum erstellten JAR
+          path: build/libs/*.jar # Pfad zum erstellten JAR
 
   test:
     runs-on: ubuntu-latest
