@@ -93,7 +93,9 @@ jobs:
         run: |
           curl -L https://fly.io/install.sh | sh
           echo "$HOME/.fly/bin" >> $GITHUB_PATH
-          flyctl version # Dieser Test wird jetzt funktionieren
+
+      - name: Verify Fly.io CLI Installation
+        run: flyctl version # Dieser Schritt prüft, ob flyctl korrekt installiert wurde
 
       - name: Authenticate with Fly.io
         env:
