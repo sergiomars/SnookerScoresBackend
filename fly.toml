@@ -1,4 +1,4 @@
-app = "SnookerScoresBackend"
+app = "snooker-scores-backend"
 
 [build]
 builder = "paketobuildpacks/builder:base"
