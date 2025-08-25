@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17-oracle
 WORKDIR /app
 COPY build/libs/*.jar app.jar
 EXPOSE 8080
